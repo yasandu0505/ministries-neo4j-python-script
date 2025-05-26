@@ -11,8 +11,8 @@ USERNAME = os.getenv("USERNAME")
 PASSWORD = os.getenv("PASSWORD")
 
 # ---- Read CSVs ----
-ministries_df = pd.read_csv("ministries.csv")
-departments_df = pd.read_csv("departments.csv")
+ministries_df = pd.read_csv("./csv_output/ministries.csv")
+departments_df = pd.read_csv("./csv_output/departments.csv")
 
 # ---- Connect to Neo4j ----
 driver = GraphDatabase.driver(NEO4J_URI, auth=(USERNAME, PASSWORD))
