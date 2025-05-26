@@ -1,10 +1,14 @@
 import pandas as pd
 from neo4j import GraphDatabase
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # ---- Config ----
-NEO4J_URI = "neo4j+s://ce9b58fb.databases.neo4j.io"  # Replace with your AuraDB URI
-USERNAME = "neo4j"  # Replace with your Neo4j username
-PASSWORD = "K_kWWn1C1Q24qVQ0wOZDZFrAgsLjMqqdKpOq1ZRdxMY"  # Replace with your Neo4j password
+NEO4J_URI = os.getenv("NEO4J_URI")
+USERNAME = os.getenv("USERNAME")
+PASSWORD = os.getenv("PASSWORD")
 
 # ---- Read CSVs ----
 ministries_df = pd.read_csv("ministries.csv")
